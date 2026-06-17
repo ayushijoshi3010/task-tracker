@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- This link in for adding css file -->
+ <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+
+ <!-- This link is for fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+
+
+    <!-- This link is for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Signup</title>
+</head>
+<body>
+    
+<div class="signup_login">
+    <div class="signup_box">
+            <!-- Display messages -->
+    {% for message in messages %}
+        <p class="msg">{{message}}</p>
+    {% endfor %}
+         <div class="heading">
+                Signup
+            </div>
+        <form method="post">
+            {% csrf_token %}
+           
+            <div class="line">
+                <div class="field">
+                    <b>Username</b>
+                    <input type="text" required placeholder="Enter your Username" name="fname" class="inp">
+                </div>
+                <div class="field">
+                    <b>Email</b>
+                    <input type="email" required placeholder="Enter your Email" name="email" class="inp">
+                </div>
+                <div class="field">
+                    <b>Password</b>
+                    <input type="password" required placeholder="Enter password" name="pwd" class="inp">
+                </div>
+                <div class="field">
+                    <!-- <b>Signup</b> -->
+                    <input type="submit" class="submit-button" value="Signup" >
+                </div>
+            </div>
+        </form>
+        <div class="field">
+            <b>Already have an account  : </b>
+            <br>
+            <a href="{% url 'login_view' %}" class="anc">Login</a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+setTimeout(()=>{
+    document.querySelectorAll('.msg').forEach(msg=>{
+        msg.style.display='none';
+    })
+},3000)
+
+</script>
+
+
+</body>
+</html>

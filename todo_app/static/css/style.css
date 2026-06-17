@@ -1,0 +1,168 @@
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0e0d;
+    color:#f0ece4;
+    min-height:100vh;
+    margin:0;
+    padding:40px 20px;
+}
+
+.signup_login{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.signup_login h1{
+    font-size:18px;
+    color:#7a756c;
+    margin-bottom:15px;
+}
+
+.signup_box{
+    width:700px;
+    background:#1a1916;
+    border:1px solid #2e2c29;
+    border-radius:14px;
+    padding:35px;
+    box-shadow:0 24px 64px rgba(0,0,0,0.6);
+}
+
+.heading_row{
+    display:flex;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.todo_heading{
+    font-size:32px;
+    font-weight:700;
+    margin:0;
+    color:#f0ece4;
+}
+
+.heading_row a{
+    margin-left:auto;
+    text-decoration:none;
+}
+
+.logout_icon{
+    font-size:22px;
+    color:#7a756c;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.logout_icon:hover{
+    color:#e8a030;
+}
+
+form{
+    display:flex;
+    gap:12px;
+}
+
+.inp{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#242220;
+    color:white;
+    outline:none;
+}
+
+.inp::placeholder{
+    color:#7a756c;
+}
+
+.submit_button{
+    background:#e8a030;
+    color:black;
+    border:none;
+    padding:14px 24px;
+    border-radius:8px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.submit_button:hover{
+    background:#c4872a;
+}
+
+.Todo{
+    width:700px;
+    margin-top:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#1a1916;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+thead{
+    background:#242220;
+}
+
+thead td{
+    padding:16px;
+    font-weight:700;
+}
+
+tbody td{
+    padding:16px;
+    border-top:1px solid #2e2c29;
+}
+
+tbody tr:hover{
+    background:#242220;
+}
+
+td:first-child{
+    width:70px;
+    text-align:center;
+}
+
+td:nth-child(3),
+td:nth-child(4){
+    width:80px;
+    text-align:center;
+}
+
+td a{
+    color:#b0a99e;
+    text-decoration:none;
+}
+
+td a:hover{
+    color:#e8a030;
+}
+
+td[colspan="4"]{
+    text-align:center;
+    padding:25px;
+    color:#7a756c;
+}
+
+@media(max-width:768px){
+
+    .signup_box,
+    .Todo{
+        width:95%;
+    }
+
+    form{
+        flex-direction:column;
+    }
+
+    .submit_button{
+        width:100%;
+    }
+
+    .todo_heading{
+        font-size:24px;
+    }
+}

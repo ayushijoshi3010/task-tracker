@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- This link in for adding css file -->
+ <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+
+ <!-- This link is for fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" />
+
+
+    <!-- This link is for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Login</title>
+</head>
+<body>
+    
+<div class="signup_login">
+    <div class="signup_box">
+  
+
+
+        <form method="post">
+            {% csrf_token %}
+
+    <!-- Display messages -->
+    {% for message in messages %}
+        <p class="msg">{{message}}</p>
+    {% endfor %}
+
+            <div class="heading">
+                Login
+            </div>
+            <div class="line">
+                <div class="field">
+                    <b>Username</b>
+                    <input type="text" required placeholder="Enter your Username" name="fname" class="inp">
+                </div>
+              
+                <div class="field">
+                    <b>Password</b>
+                    <input type="password" required placeholder="Enter password" name="pwd" class="inp">
+                </div>
+                <div class="field">
+                    <b>Login</b>
+                    <input type="submit" class="submit-button" value="Login" >
+                </div>
+            </div>
+        </form>
+        <div class="field">
+            <b>Don't have an account</b>
+            <br>
+            <a href="{% url 'signup_view' %}" class="anc">Signup</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.querySelectorAll('.msg').forEach(msg => {
+            msg.style.display = 'none';
+        });
+    }, 3000);
+</script>
+
+</body>
+</html>
